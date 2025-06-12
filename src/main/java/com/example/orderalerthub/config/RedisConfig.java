@@ -1,6 +1,6 @@
 package com.example.orderalerthub.config;
 
-import com.example.orderalerthub.service.RedisSubscriber;
+import com.example.orderalerthub.infrastructure.redis.RedisSubscriber;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;

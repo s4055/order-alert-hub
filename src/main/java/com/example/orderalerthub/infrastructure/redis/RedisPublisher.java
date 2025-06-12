@@ -1,13 +1,13 @@
-package com.example.orderalerthub.service;
+package com.example.orderalerthub.infrastructure.redis;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 @Slf4j
 @RequiredArgsConstructor
-@Service
+@Component
 public class RedisPublisher {
 
   private final RedisTemplate<String, Object> redisTemplate;
