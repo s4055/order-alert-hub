@@ -14,7 +14,7 @@ public class SlackAlertHandler implements AlertHandler {
   }
 
   @Override
-  public void send() {
-    log.info("=============== 슬랙 전송 ===============");
+  public void send(String description) {
+    log.info("=============== 슬랙 전송 => {} ===============", description);
   }
 }

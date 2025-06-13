@@ -14,7 +14,7 @@ public class KakaoAlertHandler implements AlertHandler {
   }
 
   @Override
-  public void send() {
-    log.info("=============== 카카오 전송 ===============");
+  public void send(String description) {
+    log.info("=============== 카카오 전송 => {} ===============", description);
   }
 }

@@ -14,7 +14,7 @@ public class EmailAlertHandler implements AlertHandler {
   }
 
   @Override
-  public void send() {
-    log.info("=============== 이메일 전송 ===============");
+  public void send(String description) {
+    log.info("=============== 이메일 전송 => {} ===============", description);
   }
 }

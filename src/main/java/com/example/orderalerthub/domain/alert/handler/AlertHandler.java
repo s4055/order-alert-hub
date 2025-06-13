@@ -5,5 +5,5 @@ import com.example.orderalerthub.domain.alert.AlertTarget;
 public interface AlertHandler {
   AlertTarget getType();
 
-  void send();
+  void send(String description);
 }

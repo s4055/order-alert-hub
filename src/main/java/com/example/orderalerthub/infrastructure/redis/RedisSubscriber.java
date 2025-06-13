@@ -28,7 +28,7 @@ public class RedisSubscriber {
               .findFirst()
               .orElseThrow(() -> new IllegalArgumentException("지원하지 않는 알림 대상: " + target));
 
-      handler.send();
+      handler.send(msg.getStatus().getDescription());
     }
   }
 }

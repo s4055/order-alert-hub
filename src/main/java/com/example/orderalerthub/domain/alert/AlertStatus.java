@@ -13,5 +13,5 @@ public enum AlertStatus {
   ORDER_CANCELED("order_canceled", "주문취소");
 
   private final String code;
-  private final String desc;
+  private final String description;
 }
