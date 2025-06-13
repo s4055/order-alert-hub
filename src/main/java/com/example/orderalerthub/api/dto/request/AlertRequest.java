@@ -1,11 +1,13 @@
 package com.example.orderalerthub.api.dto.request;
 
+import com.example.orderalerthub.domain.alert.AlertStatus;
+import com.example.orderalerthub.domain.alert.AlertTarget;
 import java.util.List;
 import lombok.Getter;
 
 @Getter
 public class AlertRequest {
-  private String status; // 주문접수, 주문완료, 결제완료, 결제취소, 주문취소
-  private List<String> target; // 카카오, 이메일, 슬랙
+  private AlertStatus status;
+  private List<AlertTarget> target;
   private String orderCode; // 주문번호
 }

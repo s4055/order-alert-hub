@@ -1,5 +1,6 @@
 package com.example.orderalerthub.infrastructure.redis;
 
+import com.example.orderalerthub.domain.alert.AlertTarget;
 import com.example.orderalerthub.domain.alert.handler.AlertHandler;
 import com.example.orderalerthub.domain.model.OrderMessage;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -20,10 +21,10 @@ public class RedisSubscriber {
   public void onMessage(String message, String channel) throws JsonProcessingException {
     log.info("=============== 구독 {} ===============", channel);
     OrderMessage msg = objectMapper.readValue(message, OrderMessage.class);
-    for (String target : msg.getTarget()) {
+    for (AlertTarget target : msg.getTarget()) {
       AlertHandler handler =
           handlers.stream()
-              .filter(h -> h.getType().equalsIgnoreCase(target))
+              .filter(h -> h.getType().equals(target))
               .findFirst()
               .orElseThrow(() -> new IllegalArgumentException("지원하지 않는 알림 대상: " + target));
 

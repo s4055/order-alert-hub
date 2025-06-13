@@ -25,7 +25,7 @@ public class AlertServiceImpl implements AlertService {
   public CommonResponse<AlertResponse> process(AlertRequest request)
       throws JsonProcessingException {
     OrderMessage msg =
-        new OrderMessage(request.getOrderCode(), request.getStatus(), request.getTarget());
+        new OrderMessage(request.getStatus(), request.getTarget(), request.getOrderCode());
     redisPublisher.publish("order", objectMapper.writeValueAsString(msg));
     return new CommonResponse<>(ErrorCode.OK.getResultCode(), ErrorCode.OK.getMessage(), null);
   }

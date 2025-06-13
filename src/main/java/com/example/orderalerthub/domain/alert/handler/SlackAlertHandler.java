@@ -1,5 +1,6 @@
 package com.example.orderalerthub.domain.alert.handler;
 
+import com.example.orderalerthub.domain.alert.AlertTarget;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -8,8 +9,8 @@ import org.springframework.stereotype.Component;
 public class SlackAlertHandler implements AlertHandler {
 
   @Override
-  public String getType() {
-    return "slack";
+  public AlertTarget getType() {
+    return AlertTarget.SLACK;
   }
 
   @Override
